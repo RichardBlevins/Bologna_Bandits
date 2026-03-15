@@ -1,6 +1,79 @@
 [gd_scene format=3 uid="uid://o7pcctcwwps3"]
 
+[ext_resource type="PackedScene" uid="uid://c53j0ubsu6534" path="res://scenes/game_scene/entities/Player/Player.tscn" id="1_0nr2a"]
+[ext_resource type="PackedScene" uid="uid://bojcpp7p4y17t" path="res://scenes/game_scene/entities/Wiener/wiener.tscn" id="2_2hhcp"]
+
+[sub_resource type="Environment" id="Environment_5l52e"]
+background_mode = 1
+background_color = Color(0.66136056, 0.77365124, 1, 1)
+background_energy_multiplier = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5l52e"]
+albedo_color = Color(0.1063117, 0.24691692, 0.085568376, 1)
+
 [node name="Level1" type="Node3D" unique_id=1287919285]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=681575873]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0505476)
+transform = Transform3D(1, 0, 0, 0, 0.5409745, 0.84103906, 0, -0.84103906, 0.5409745, 0, 9.726074, 6.407688)
+fov = 69.676765
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=371971016]
+environment = SubResource("Environment_5l52e")
+
+[node name="World" type="Node3D" parent="." unique_id=1973361086]
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="World" unique_id=49654711]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.183044, 1.5202479, 0.5914755)
+use_collision = true
+size = Vector3(0.27146912, 3.5719604, 11.201111)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="World" unique_id=784463055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00964725, 0)
+use_collision = true
+radius = 16.172852
+height = 0.28430176
+material = SubResource("StandardMaterial3D_5l52e")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="World" unique_id=1702858765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24342632, -0.23057508, 0.50169396)
+use_collision = true
+size = Vector3(11.87915, 1, 11.405334)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="World" unique_id=404557939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6328893, 1.7090697, 0.64890575)
+use_collision = true
+size = Vector3(0.27146912, 3.2017212, 11.201111)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World" unique_id=1805000136]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2715912, 1.4772339, -4.940625)
+use_collision = true
+size = Vector3(12.670258, 3.9544678, 0.3515625)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="World/CSGBox3D2" unique_id=677534426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0487435, -0.16993189, 10.432743)
+size = Vector3(10.933617, 3.9544678, 0.3515625)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="World" unique_id=1025609933]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63758326, 2.059021, -2.1367188)
+use_collision = true
+size = Vector3(0.2771665, 3.118042, 5.2734375)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="World/CSGBox3D5" unique_id=1768356350]
+transform = Transform3D(0.004031723, 0, 0.9999919, 0, 1, 0, -0.9999919, 0, 0.004031723, 3.239348, -0.8897228, 1.9937692)
+size = Vector3(0.2771665, 4.6273804, 3.696045)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="World" unique_id=450917096]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3876176, 1.3661246, 3.073289)
+use_collision = true
+size = Vector3(0.2771665, 3.118042, 5.2734375)
+
+[node name="Player" parent="." unique_id=1478458532 instance=ExtResource("1_0nr2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.337716, 2.2200432, -2.3384333)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1399433959]
+transform = Transform3D(-0.8234732, 0.56735516, 0, 0.14019372, 0.2034806, 0.96898985, 0.5497614, 0.7979372, -0.24710044, 0, 12.03606, 0)
+
+[node name="Wiener" parent="." unique_id=1551336263 instance=ExtResource("2_2hhcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1415449, 0.37332785, 2.1498778)
+collision_layer = 0
+collision_mask = 1

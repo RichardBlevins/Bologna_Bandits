@@ -4,8 +4,8 @@
 script/source = "extends CharacterBody3D
 
 
-@export var speed : float = 5.0
-@export var jump_velocity : float = 4.5
+@export var speed : float = 2.5
+@export var jump_velocity : float = 2.5
 
 
 func _physics_process(delta: float) -> void:
@@ -32,16 +32,26 @@ func _physics_process(delta: float) -> void:
 "
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrdso"]
+radius = 0.33177134
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xrdso"]
+albedo_color = Color(0.34901962, 0.18431373, 0, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_baibn"]
+material = SubResource("StandardMaterial3D_xrdso")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_baibn"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1478458532]
 script = SubResource("GDScript_xrdso")
-
-[node name="InputManager" type="Node3D" parent="." unique_id=669565293]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1903043441]
 shape = SubResource("SphereShape3D_xrdso")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1970034961]
 mesh = SubResource("SphereMesh_baibn")
+
+[node name="Hitbox" type="Area3D" parent="." unique_id=964337462]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox" unique_id=981820295]
+shape = SubResource("SphereShape3D_baibn")

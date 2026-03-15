@@ -3,8 +3,11 @@
 [sub_resource type="GDScript" id="GDScript_jue12"]
 script/source = "extends Area3D
 
-func _ready() -> void:
-	pass
+@export var scene : String
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"interact\") && has_overlapping_areas():
+		get_tree().change_scene_to_file(scene)
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jue12"]

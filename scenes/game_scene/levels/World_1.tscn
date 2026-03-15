@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://erbvhh81vap5"]
 
 [ext_resource type="PackedScene" uid="uid://c53j0ubsu6534" path="res://scenes/game_scene/entities/Player/Player.tscn" id="1_v2fsu"]
+[ext_resource type="PackedScene" uid="uid://ch5nnbt1x46fq" path="res://scenes/game_scene/levels/assets/Level_Pad.tscn" id="2_nv27p"]
 
 [node name="World_1" type="Node3D" unique_id=1391618820]
 
@@ -21,3 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 0.81559265, 0.5786265, 0, -0.5786265, 0.8155
 fov = 46.963898
 
 [node name="Levels" type="Node3D" parent="." unique_id=1486266476]
+
+[node name="Level_Pad-1" parent="Levels" unique_id=1776935979 instance=ExtResource("2_nv27p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32732296, 0.12799951, 3.8001752)
+scene = "res://scenes/game_scene/levels/level_1.tscn"
