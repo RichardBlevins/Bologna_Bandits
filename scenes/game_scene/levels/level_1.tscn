@@ -72,8 +72,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.337716, 2.2200432, -2.3384
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1399433959]
 transform = Transform3D(-0.8234732, 0.56735516, 0, 0.14019372, 0.2034806, 0.96898985, 0.5497614, 0.7979372, -0.24710044, 0, 12.03606, 0)
+light_energy = 3.535
 
 [node name="Wiener" parent="." unique_id=1551336263 instance=ExtResource("2_2hhcp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1415449, 0.37332785, 2.1498778)
-collision_layer = 0
-collision_mask = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8608663, 0.3733288, 0.8540559)
